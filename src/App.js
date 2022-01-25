@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-      {/* <AddCustomers onAddCustomer = {addNewCustomer}/> */}
+      <AddCustomers onAddCustomer = {addNewCustomer}/>
       <CustomersList data={customers} />
     </div>
   );
