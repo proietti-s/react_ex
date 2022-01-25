@@ -4,30 +4,38 @@ import AddCustomers from "./components/Customers/AddCustomers";
 import CustomersList from "./components/Customers/CustomersList";
 
 const DATA_CUSTOMERS = [
-  { id: "c1", firstName: "Paul", secName: "Dumars", email: "paul@mail.it" },
-  { id: "c2", firstName: "John", secName: "Mieli", email: "mieli@mail.it" },
+  { id: "c1", name: "Paul", lastName: "Dumars", email: "paul@mail.it" },
+  { id: "c2", name: "John", lastName: "Mieli", email: "mieli@mail.it" },
   {
     id: "c3",
-    firstName: "Sandra",
-    secName: "Fieldman",
+    name: "Sandra",
+    lastName: "Fieldman",
     email: "sandra@mail.it",
   },
-  { id: "c4", firstName: "Lola", secName: "Aiuola", email: "lola@mail.it" },
-  { id: "c5", firstName: "Billy", secName: "Ballo", email: "billy@mail.it" },
+  { id: "c4", name: "Lola", lastName: "Aiuola", email: "lola@mail.it" },
+  { id: "c5", name: "Billy", lastName: "Ballo", email: "billy@mail.it" },
 ];
 
-function App() {
+function App(props) {
   const [customers, setCustomers] = useState(DATA_CUSTOMERS);
 
   const addNewCustomer = (customer) => {
     setCustomers((prevCustomers) => {
-      return [customer, ...prevCustomers];
-    });
+      return [
+        customer, ...prevCustomers
+      ]
+    })
+    console.log(customer)
+
   };
 
   return (
     <div>
+<<<<<<< Updated upstream
       {/* <AddCustomers onAddCustomer = {addNewCustomer}/> */}
+=======
+      <AddCustomers onAddCustomer={addNewCustomer} />
+>>>>>>> Stashed changes
       <CustomersList data={customers} />
     </div>
   );
