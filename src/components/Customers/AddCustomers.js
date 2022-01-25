@@ -44,23 +44,18 @@ const AddCustomers = (props) => {
 
     const changeCustomerName = (e) => {
         e.preventDefault()
-
         setCustomerName(e.target.value)
-        // console.log(customerName)
-        e.target.value = ''
+        
     }
     const changheCustomerSurname = (e) => {
         e.preventDefault()
-
         setCustomerSurname(e.target.value)
-        // console.log(customerSurname);
-        e.target.value = ''
+        
     }
     const changheCustomerEmail = (e) => {
         e.preventDefault()
         setCustomerEmail(e.target.value)
-        // console.log(customerEmail);
-        e.target.value=''
+        
     }
 
 
@@ -68,22 +63,22 @@ const AddCustomers = (props) => {
         e.preventDefault()
         // console.log('okay')
         // console.log(e.target.value);
-
         setCustomer({
             name: customerName,
             lastName: customerSurname,
             email: customerEmail
         })
-      
+
         props.onAddCustomer(customer)
-        console.log(customer);
-        e.target.value=''
-        
+        console.log(props);
+
+        setCustomerName('')
+        setCustomerSurname('')
+        setCustomerEmail('')
     }
     return (
         <Card>
             <Container>
-
                 <form onSubmit={addCustomerHandler}>
                     <label>Name</label>
                     <input type="text" value={customerName} onChange={changeCustomerName} />
