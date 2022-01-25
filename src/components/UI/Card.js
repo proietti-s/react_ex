@@ -1,16 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-
+import React from "react";  
+import styled from "styled-components"
 const Wrapper = styled.div`
-  background: rgba(100, 200, 1200, 0.5);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 10px;
-  padding: 5px;
-  margin: 10px;
-`;
+    margin: 1.5rem auto;
+    width: 89%;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: whitesmoke;
+    display: flex  ;
+    flex-direction: column;
+    justify-content: center;
+  
+`
+
 
 const Card = (props) => {
-  return <Wrapper>{props.children}</Wrapper>;
-};
+
+    return (
+        <Wrapper>
+            {props.children}
+        </Wrapper>
+    )
+}
 
 export default Card;
