@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomersList from "./components/Customers/CustomersList";
 
 const DATA_CUSTOMERS = [
   {id: 'c1', firstName: 'Paul', secName: 'Dumars', email:'paul@mail.it'},
@@ -9,11 +10,13 @@ const DATA_CUSTOMERS = [
 ]
 
 function App() {
-  
+    const [data, setData] = useState(DATA_CUSTOMERS)
+
+    setData( )
 
   return (
     <div>
-    
+      <CustomersList data={DATA_CUSTOMERS}/>
     </div>
   );
 }
