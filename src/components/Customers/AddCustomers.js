@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-/* import React from "react"; */ 
-/* const AddCustomers = (props) => {
-    return
-=======
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styled from "styled-components";
@@ -101,7 +96,6 @@ const AddCustomers = (props) => {
             </Container>
         </Card>
     )
->>>>>>> Stashed changes
 }
 
-export default AddCustomers; */
+export default AddCustomers; 

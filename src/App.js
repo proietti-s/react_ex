@@ -31,11 +31,7 @@ function App(props) {
 
   return (
     <div>
-<<<<<<< Updated upstream
-      {/* <AddCustomers onAddCustomer = {addNewCustomer}/> */}
-=======
       <AddCustomers onAddCustomer={addNewCustomer} />
->>>>>>> Stashed changes
       <CustomersList data={customers} />
     </div>
   );
