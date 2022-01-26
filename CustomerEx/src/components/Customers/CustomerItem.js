@@ -19,7 +19,8 @@ const Btn = styled.button`
   cursor: pointer;
 
   &:hover {
-    transform: rotate(-2deg);
+    transform: rotate(10deg);
+    transform: scale(1.2);
   }
 `;
 

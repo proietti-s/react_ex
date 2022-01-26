@@ -36,7 +36,9 @@ function App() {
     });
   };
   let content = (
-    <p style={{ textAlign: "center", color: "whitesmoke" }}>No Customers found. Maybe add one?</p>
+    <p style={{ textAlign: "center", color: "#263f6a" }}>
+      No Customers found. Maybe add one?
+    </p>
   );
   if (customers.length > 0) {
     content = (

@@ -28,10 +28,11 @@ const Container = styled.div`
   & input:focus{
     background-color: aliceblue;
     outline: none;
+    color: #e7adce;
   }
   & label {
     font-size: 1.3rem;
-    color: beige;
+    color: #6db3c6;
     padding: 0.5rem;
     font-weight: 700;
   }
