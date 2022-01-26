@@ -16,19 +16,15 @@ const DATA_CUSTOMERS = [
   { id: "c5", name: "Billy", lastName: "Ballo", email: "billy@mail.it" },
 ];
 
-function App(props) {
+function App() {
   const [customers, setCustomers] = useState(DATA_CUSTOMERS);
 
   const addNewCustomer = (customer) => {
     setCustomers((prevCustomers) => {
-      return [
-        customer, ...prevCustomers
-      ]
-    })
-    console.log(customer)
-
+      return [customer, ...prevCustomers];
+    });
   };
-
+  console.log(customers);
   return (
     <div>
       <AddCustomers onAddCustomer={addNewCustomer} />

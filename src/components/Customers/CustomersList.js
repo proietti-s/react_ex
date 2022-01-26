@@ -6,9 +6,9 @@ import Card from "../UI/Card";
 const CustomersList = (props) => {
   /* const customers = props.data.map(customer => console.log(customer)) */
   return (
-    <>
+    <div>
       {props.data.map((customer) => (
-        <Card key={Math.random().toString() || customer.id}>
+        <Card key={Math.random().toString()}>
           <div>
             <p>
               <b>Name:</b> {customer.name}
@@ -23,7 +23,7 @@ const CustomersList = (props) => {
         </Card>
       )
       )}
-    </>
+    </div>
   )
 }
 
