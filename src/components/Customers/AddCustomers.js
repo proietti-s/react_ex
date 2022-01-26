@@ -8,11 +8,36 @@ import styled from "styled-components";
 //--------styling-------------//
 
 const Form = styled.form`
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin: 10px 5px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  margin: 0 auto;
+ 
+  & input {
+    width: 70%;
+    margin: 10px 0px;
+    padding: 5px;
+    border:none;
+    border-radius: 10px;
+  }
+
+  & input:focus{
+    outline: none;
+  }
+
+  & Button {
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+    border:none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
 `;
 
 //-----------component-------------//
