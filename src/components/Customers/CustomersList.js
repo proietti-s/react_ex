@@ -16,21 +16,21 @@ text-align: center;
 const CustomersList = (props) => {
   /* const customers = props.data.map(customer => console.log(customer)) */
   return (
-    <Card>
-      {props.data.map((customer) => (
-        <Content key={Math.random().toString() || customer.id}>
-            <p>
-              <b>Name:</b> {customer.firstName}
-            </p>
-            <p>
-              <b>Lastname:</b> {customer.lastName}
-            </p>
-            <p>
-              <b>Email:</b> {customer.email}
-            </p>
-        </Content>
-      ))}
-    </Card>
+      <Card>
+        {props.data.map((customer) => (
+          <Content key={Math.random().toString() || customer.id}>
+              <p>
+                <b>Name:</b> {customer.firstName}
+              </p>
+              <p>
+                <b>Lastname:</b> {customer.lastName}
+              </p>
+              <p>
+                <b>Email:</b> {customer.email}
+              </p>
+          </Content>
+        ))}
+      </Card>
   );
 };
 
