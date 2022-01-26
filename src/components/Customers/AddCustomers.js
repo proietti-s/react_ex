@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import Card from "../UI/Card";
 import Button from "../UI/Button";
@@ -17,19 +17,37 @@ const Form = styled.form`
 
 //-----------component-------------//
 
+const validateEmail =
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+
 const AddCustomers = (props) => {
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const errorHandler = () => {
-    setError(null)
-  }
+    setError(null);
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    if (event.target[0].value.trim().length === 0 || event[1].target.value.trim().length === 0 || event.target[2].value.trim().length) {
+    if (
+      event.target[0].value.trim().length === 0 ||
+      event.target[1].value.trim().length === 0
+    ) {
       setError({
-        title: 'Invalid input',
-        message: 'Please enter a valid name, lastname and email,  (non-empty values).',
+        title: "Invalid input",
+        message: "Please enter a valid name and lastname (non-empty values).",
+      });
+      return;
+    }
+
+    if (
+      event.target[2].value.trim().length === 0 ||
+      !event.target[2].value.toLowerCase().match(validateEmail)
+    ) {
+      setError({
+        title: "Invalid Email",
+        message:
+          "Please enter a valid email (non-empty values) in the correct format (mail@mail.it).",
       });
       return;
     }
@@ -43,7 +61,13 @@ const AddCustomers = (props) => {
 
   return (
     <div>
-        {error && (<ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}/>)}
+      {error && (
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        />
+      )}
       <Card>
         <Form onSubmit={submitHandler}>
           <label htmlFor="name">Name</label>
