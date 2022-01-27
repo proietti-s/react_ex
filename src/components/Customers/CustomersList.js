@@ -9,7 +9,7 @@ const CustomersList = (props) => {
     <Card>
       {props.data.map((customer) => (
         <CustomerItem
-          key={Math.random().toString() || customer.id}
+          key={Math.random().toString()}
           id={customer.id}
           onDeleteItem={props.onDelete}
         >

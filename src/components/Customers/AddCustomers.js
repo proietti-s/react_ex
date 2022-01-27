@@ -8,7 +8,6 @@ import styled from "styled-components";
 //--------styling-------------//
 
 const Form = styled.form`
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -16,27 +15,38 @@ const Form = styled.form`
   flex-wrap: nowrap;
   max-width: 100%;
   margin: 0 auto;
- 
+
   & input {
     width: 70%;
     margin: 10px 0px;
     padding: 5px;
-    border:none;
+    border: none;
     border-radius: 10px;
   }
 
-  & input:focus{
+  & input:focus {
     outline: none;
   }
+`;
+
+const BtnWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
   & Button {
-    position: absolute;
+    cursor: pointer;
     padding: 10px;
-    bottom: 0;
-    right: 0;
-    border:none;
+    border: none;
     border-radius: 10px;
     font-weight: bold;
+    margin: 0 5px;
+  }
+
+  & Button:hover {
+
   }
 `;
 
@@ -46,6 +56,7 @@ const validateEmail =
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
 const AddCustomers = (props) => {
+  const [isVisible, setIsVisibile] = useState(false);
   const [error, setError] = useState("");
 
   const errorHandler = () => {
@@ -78,11 +89,20 @@ const AddCustomers = (props) => {
     }
 
     props.onAdd(event);
+    setIsVisibile(false)
 
-    event.target[0].value = "";
-    event.target[1].value = "";
-    event.target[2].value = "";
   };
+
+  const cancelBtnHandler = (event) => {
+    event.preventDefault();
+    setIsVisibile(false)
+
+  }
+
+  const addNewCustomerHandler = (event) => {
+    event.preventDefault()
+    setIsVisibile(true)
+  }
 
   return (
     <div>
@@ -94,15 +114,26 @@ const AddCustomers = (props) => {
         />
       )}
       <Card>
-        <Form onSubmit={submitHandler}>
+        {isVisible && (<Form onSubmit={submitHandler}>
           <label htmlFor="name">Name</label>
           <input type="text" name="firstName" />
           <label htmlFor="lastname">Lastname</label>
           <input type="text" name="lastName" />
           <label htmlFor="email">Email</label>
           <input type="text" name="email" />
-          <Button type="submit">Add Customer</Button>
-        </Form>
+
+          <BtnWrapper style={{ justifyContent: "flex-end" }}>
+            <Button type="button" onClick={cancelBtnHandler}>
+              Cancel
+            </Button>
+            <Button type="submit">
+              Add
+            </Button>
+          </BtnWrapper>
+        </Form>)}
+        {!isVisible && (<BtnWrapper>
+          <Button type="button" onClick={addNewCustomerHandler}>Add New Customer</Button>
+        </BtnWrapper>)}
       </Card>
     </div>
   );

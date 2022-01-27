@@ -25,6 +25,7 @@ function App() {
   const saveCustomer = (formEvent) => {
 
     const customer = {
+      id: Math.random().toString(),
       firstName: formEvent.target.firstName.value,
       lastName: formEvent.target.lastName.value,
       email: formEvent.target.email.value,
@@ -37,7 +38,9 @@ function App() {
 
   const onDeleteCustomer = (customerId) => {
     setCustomers((prevCustomers) => {
-      const updatedCustomers = prevCustomers.filter((customer) => customer.id !== customerId);
+      const updatedCustomers = prevCustomers.filter((customer) => 
+        customer.id !== customerId);
+      
       return updatedCustomers;
   })
   };

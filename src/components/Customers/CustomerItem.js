@@ -19,13 +19,20 @@ const Content = styled.div`
 const Action = styled.div`
   display: flex;
   justify-content: flex-end;
+  
   & Button {
-    background: black;
+    background: rgb(70,70,70);
     border: none;
     border-radius: 50%;
     color: white;
-    margin-right: 10px;
     padding: 8px;
+    cursor: pointer;
+  }
+
+  & Button:hover {
+    background: rgb(200,105,100);
+    color: black;
+    transform: scale(1.1);
   }
 `;
 
