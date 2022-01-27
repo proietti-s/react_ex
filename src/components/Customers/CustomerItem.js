@@ -5,7 +5,7 @@ import Button from "../UI/Button";
 import styled from "styled-components";
 
 const Content = styled.div`
-  background: white;
+  background: rgba(250, 250, 250, 0.8);
   margin: 10px auto;
   padding: 5px;
   width: 70%;
