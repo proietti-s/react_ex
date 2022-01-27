@@ -16,12 +16,20 @@ const Form = styled.form`
   max-width: 100%;
   margin: 0 auto;
 
+  & label {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    color: rgb(230,230,230);
+  }
+
   & input {
     width: 70%;
     margin: 10px 0px;
-    padding: 5px;
+    padding: 10px 5px;
     border: none;
     border-radius: 10px;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
   }
 
   & input:focus {
@@ -42,11 +50,17 @@ const BtnWrapper = styled.div`
     border: none;
     border-radius: 10px;
     font-weight: bold;
+    text-transform: uppercase;
     margin: 0 5px;
+    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.5);
   }
 
   & Button:hover {
-
+    background: rgb(100, 150, 180);
+    color: whitesmoke;
+    transform: scale(1.1);
+    transition: transform 0.25s ease-in-out;
+    
   }
 `;
 
