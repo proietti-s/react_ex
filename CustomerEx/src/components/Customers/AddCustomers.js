@@ -1,23 +1,25 @@
-import Card from "../UI/Card";
 import Button from "../UI/Button";
 import styled from "styled-components";
 import { useState } from "react";
 import ErrorModal from "./ErrorModal";
 
 const validMail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const Container = styled.div`
-  
 
-  & form {
+const InputForm = styled.div`
+  width: 100%;
+ 
+`
+const Container = styled.div`
+    & form {
     text-align: center;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 1rem;
   }
   & input {
-    padding: 0.5rem;
+    padding:0.2rem 0.5rem;
     border-radius: 10px;
     border: none;
     background-color: rgba(0, 0, 0, 0.1);
@@ -28,10 +30,10 @@ const Container = styled.div`
   & input:focus{
     background-color: aliceblue;
     outline: none;
-    color: #e7adce;
+    color: #3f75e0;
   }
   & label {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     color: #6db3c6;
     padding: 0.5rem;
     font-weight: 700;
@@ -105,8 +107,8 @@ const AddCustomers = (props) => {
   };
 
   return (
-    <div>
-      <Card>
+    <InputForm>
+      
         <Container className="container">
           <form onSubmit={addCustomerHandler}>
             <label>Name</label>
@@ -130,7 +132,7 @@ const AddCustomers = (props) => {
             <Button type="submit">Add</Button>
           </form>
         </Container>
-      </Card>
+     
       {error && (
         <ErrorModal
           errTitle={error.title}
@@ -138,7 +140,7 @@ const AddCustomers = (props) => {
           onConfirm={errorHandler}
         />
       )}
-    </div>
+    </InputForm>
   );
 };
 

@@ -29,14 +29,14 @@ function App() {
 
   const deleteCustomerHandler = (customerId) => {
     setCustomers((prevCustomers) => {
-      const updateCustomers = prevCustomers.filter(
-        (customer) => customer.id !== customerId
-      );
+      const updateCustomers = prevCustomers.filter((customer) => customer.id !== customerId);
       return updateCustomers;
     });
   };
+
+
   let content = (
-    <p style={{ textAlign: "center", color: "#263f6a" }}>
+    <p style={{ textAlign: "center", color: "#263f6a", fontSize: '2rem' }}>
       No Customers found. Maybe add one?
     </p>
   );
