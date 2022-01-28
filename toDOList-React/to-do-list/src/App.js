@@ -7,18 +7,27 @@ import "./App.css";
 const Todo = (props) => {
   return (
     <div
-       onClick={() => props.completeTodo(props.index)}
+      style={{ backgroundColor: props.todo.completed ? "#6a67ce3e" : "" }}
       className="todo"
-      style={{
-        textDecoration: props.todo.completed ? "line-through" : "",
-        backgroundColor: props.todo.completed ? "#6a67ce3e" : "",
-      }}
+      onClick={() => props.completeTodo(props.index)}
     >
-      {props.todo.name}
+      <p
+        style={{
+          textDecoration: props.todo.completed ? "line-through" : "",
+        }}
+      >
+        {" "}
+        {props.todo.name}{" "}
+      </p>
       <div>
         <button
-          style={{ display: props.todo.completed ? "block" : "none" }}
-          onClick={() => props.completeTodo(props.index)}>
+          style={{
+            color: "#fc636b",
+            display: props.todo.completed ? "block" : "none",
+            textDecoration: props.todo.completed ? "none" : "",
+          }}
+          onClick={() => props.completeTodo(props.index)}
+        >
           ✔
         </button>
       </div>
@@ -56,7 +65,11 @@ class Form extends React.Component {
           placeholder="Add something to do!"
           className="input"
           value={this.state.value}
+
         />
+        <button style={{padding: '1rem', fontSize:'2rem', outline: 'none'}}  onClick={this.submitHandler}>
+        📖
+        </button>
       </form>
     );
   }
@@ -93,20 +106,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app">
-        
-        <div className="todo-list">
-          {this.state.todos.map((item, index) => (
-            <Todo
-              key={index}
-              todo={item}
-              index={index}
-              completeTodo={this.completaTodoHandler}
-            />
-          ))}
-          <Form submit={this.addTodo} />
+        <div>
+          <nav style={{background: 'blue', padding: '0.5rem'}}><h1>React - to do list</h1></nav>
+        <div className="app">
+          <div className="todo-list">
+            {this.state.todos.map((item, index) => (
+              <Todo
+                key={index}
+                todo={item}
+                index={index}
+                completeTodo={this.completaTodoHandler}
+              />
+            ))}
+            <Form submit={this.addTodo} />
+          </div>
         </div>
-      </div>
+        </div>
     );
   }
 }

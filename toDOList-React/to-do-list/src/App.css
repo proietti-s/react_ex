@@ -8,12 +8,10 @@ background: #1aafd0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  width: 90%;
+
+  width: 100%;
 }
-h1{
-  color: brown;
-}
+
 .todo-list {
 
   background: #a5dbe5;
@@ -28,9 +26,10 @@ h1{
   background: #fffdf896;
   color: #6a67ce;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.55);
-  padding: 3px 10px;
+  padding: 0.3rem 1rem;
   font-size: 0.8rem;
   font-family: 'Roboto', sans-serif;
+  font-weight: 600;
   margin-bottom: 10px;
   border-radius: 10px;
   display: flex;
